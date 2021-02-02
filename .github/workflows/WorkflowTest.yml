@@ -13,7 +13,7 @@ jobs:
     name: A job to say hello
     steps:
       - name: Check out repository
-        uses: actions/checkout@v2
+        uses: FirstAction/checkout@v2
       - name: Use local action
         uses: ./.github/actions/FirstAction
         with:
