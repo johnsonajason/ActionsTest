@@ -12,10 +12,19 @@ jobs:
     runs-on: ubuntu-latest
     name: A job to say hello
     steps:
-    - uses: actions/checkout@v2
-    - id: foo
-      uses: ./.github/actions/FirstAction
-      with:
-        who-to-greet: 'Mona the Octocat'
-    - run: echo random-number ${{ steps.foo.outputs.random-number }} 
-      shell: bash
+      - name: Check out repository
+        uses: actions/checkout@v2
+      - name: Use local action
+        uses: ./.github/actions/FirstAction
+        with:
+            who-to-greet: 'Mona the Octocat'
+      - run: echo random-number ${{ steps.foo.outputs.random-number }} 
+        shell: bash
+
+
+ #     - name: Check out repository
+ #       uses: actions/checkout@v2
+ #     - name: Use local my-action
+ #       uses: ./.github/actions/my-action
+#Can't find 'action.yml', 'action.yaml' or 'Dockerfile' under '/home/runner/work/ActionsTest/ActionsTest/.github/actions/FirstAction'. 
+#Did you forget to run actions/checkout before running your local action?
