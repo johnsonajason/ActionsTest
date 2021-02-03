@@ -15,7 +15,7 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v2
       - name: Use local action
-        uses: ./.github/actions/FirstAction@v2
+        uses: ./.github/actions/test-a
         with:
             who-to-greet: 'Mona the Octocat'
       - run: echo random-number ${{ steps.foo.outputs.random-number }} 
